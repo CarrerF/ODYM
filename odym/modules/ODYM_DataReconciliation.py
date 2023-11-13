@@ -516,7 +516,7 @@ def check_system_solution(MFASystem,ParametersEquationsList,UnobservedVariablesL
         return 'Not a good choice for the free observed variables. Cannot solve the system.'
     
     
-def plot_density(data,bins,title='',density_only=False,ax=None,prior=True):
+def plot_density(data,bins,title='',density_only=False,ax=None,prior=False):
     '''
     Method that plots the distribution of samples.
     
@@ -544,7 +544,7 @@ def plot_density(data,bins,title='',density_only=False,ax=None,prior=True):
         sns.kdeplot( data=data, color='blue',ax=ax)
         h2, l2 = ax.get_legend_handles_labels()
         ax.legend(h1+h2, l1+l2)
-        ax.legend(['Posterior (KDE)','Prior'], loc = 'upper right')
+        ax.legend(['Prior','Posterior (KDE)'], loc = 'upper right')
     ax.set_title(title)
     
     
